@@ -22,7 +22,7 @@ export default function Header() {
     return () => clearTimeout(delayDebounceFn);
   }, [search, router]);
   return (
-    <div className="w-[100%] space-y-5 md:space-y-0 md:flex justify-between items-center py-1 px-5 bg-yellow-500 z-50">
+    <div className="w-[100%] space-y-5 md:space-y-0 md:flex justify-between items-center py-1 pb-3 md:pb-0 px-5 bg-yellow-500 z-50">
       <div className="md:w-[50%] flex justify-evenly md:justify-between items-center">
         <div>
           <Image

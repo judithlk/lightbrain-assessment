@@ -6,6 +6,6 @@ This is my submission for the Lightbrain Assessment. Below are instructions for 
 4. Create .env file in root directory and declare the following *NEXT_PUBLIC_BASE_URL=https://66ad0b3cf009b9d5c73438f9.mockapi.io/api/lightbrain/*.
 5. Run *npm run dev* or *yarn dev* to run the development server. The project should be opened in [http://localhost:3000](http://localhost:3000).
 
-##Extra Information
+**Extra Information**
 - This project uses mock data generated from [https://mockapi.io](https://mockapi.io) to populate the listings. 
-- This project is deployed on Vercel; the live link can be viewed at [https://lightbrain-assessment.vercel.app/](https://lightbrain-assessment.vercel.app/).
+- This project is deployed on Vercel; and can be viewed live at [https://lightbrain-assessment.vercel.app/](https://lightbrain-assessment.vercel.app/).

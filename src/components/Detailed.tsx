@@ -23,6 +23,9 @@ export default function Detailed() {
             showwalk={listing?.walk_dist > 0 ? true : false}
             showtrain={listing?.train_dist > 0 ? true : false}
             showcar={listing?.car_dist > 0 ? true : false}
+            reviews={listing?.reviews}
+            showreview={listing?.reviews > 0 ? true : false}
+            avg_ratings={listing?.avg_rating}
           />
         ))}
       </div>

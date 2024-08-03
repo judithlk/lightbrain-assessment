@@ -23,13 +23,13 @@ export default function Header() {
   }, [search, router]);
   return (
     <div className="w-[100%] space-y-5 md:space-y-0 md:flex justify-between items-center py-1 pb-3 md:pb-0 px-5 bg-yellow-500 z-50">
-      <div className="md:w-[50%] flex justify-evenly md:justify-between items-center">
-        <div>
+      <div className="w-[100%] pb-3 md:pb-0 border-b border-yellow-300 md:border-none md:w-[50%] flex justify-between md:justify-between items-center">
+        <div className="flex items-center">
           <Image
             src="/logo.png"
             alt="Organization logo"
-            width={100}
-            height={100}
+            width={90}
+            height={90}
           />
         </div>
         <div className="flex flex-row space-x-7">
@@ -41,7 +41,7 @@ export default function Header() {
           </Link>
         </div>
       </div>
-      <div className="w-[80%] m-auto md:w-auto flex justify-end">
+      <div className="flex justify-start md:justify-end">
         <form>
           <input type="text" placeholder="Start typing to search..." {...register("search")} className="p-1 focus-visible:outline-none rounded-sm bg-transparent border border-yellow-500 border-b-black placeholder-gray-700" />
         </form>

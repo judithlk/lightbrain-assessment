@@ -13,7 +13,8 @@ export default function FeatureCard({
   traindist,
   showwalk,
   showcar,
-  showtrain
+  showtrain,
+  cheapest_in
 }: {
   image: string;
   title: string;
@@ -24,6 +25,7 @@ export default function FeatureCard({
   showwalk: boolean;
   showcar: boolean;
   showtrain: boolean;
+  cheapest_in: string
 }) {
   return (
     <div className="min-w-[240px] md:min-w-[300px] shadow-lg h-fit bg-white">
@@ -44,7 +46,7 @@ export default function FeatureCard({
           <h3 className="text-sm text-gray-600">/week</h3>
         </div>
         <div className="bg-blue-900 text-white p-1 w-fit">
-          <h3 className="text-xs font-semibold">Cheapest in the past months</h3>
+          <h3 className="text-xs font-semibold">Cheapest in the {cheapest_in}</h3>
         </div>
         <div className="flex space-x-3 md:space-x-5 text-sm text-gray-600 pt-2">
           <div className={`flex space-x-1 items-center ${showwalk == true ? "block" : "hidden"}`}>

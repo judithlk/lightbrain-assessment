@@ -1,7 +1,10 @@
+"use client"
+
+import { useState } from "react";
 import Image from "next/image";
 
-import { FaWalking } from "react-icons/fa";
-import { MdDirectionsBus } from "react-icons/md";
+import { FaWalking, FaStar, FaRegHeart, FaHeart } from "react-icons/fa";
+import { MdDirectionsBus, MdOutlineLibraryAdd } from "react-icons/md";
 import { FaCarAlt } from "react-icons/fa";
 
 export default function DetailCard({
@@ -16,6 +19,9 @@ export default function DetailCard({
   showwalk,
   showcar,
   showtrain,
+  reviews,
+  avg_ratings,
+  showreview,
 }: {
   image: string;
   title: string;
@@ -28,10 +34,17 @@ export default function DetailCard({
   showwalk: boolean;
   showcar: boolean;
   showtrain: boolean;
+  reviews: number;
+  avg_ratings: number;
+  showreview: boolean;
 }) {
+  const goldStars = avg_ratings;
+  const noStars = 5 - avg_ratings;
+  const [liked, setLiked] = useState<boolean>(false)
+
   return (
     <div className="bg-white shadow-2xl rounded-sm w-full p-5 md:flex justify-between">
-      <div className="md:w-[23%]">
+      <div className="md:w-[23%] relative">
         <Image
           src={image}
           alt={title}
@@ -39,15 +52,40 @@ export default function DetailCard({
           height={100}
           className="w-[100%]"
         />
+        <div className="absolute top-4 right-4 space-y-2">
+          <button className="flex items-center justify-center rounded-full bg-gray-100 p-2" onClick={() => setLiked(!liked)}>
+          {liked == false ? <FaRegHeart className="fill-gray-600" /> : <FaHeart className="fill-red-600" />}
+          
+          </button>
+          <button className="flex items-center justify-center rounded-full bg-gray-100 p-2">
+          <MdOutlineLibraryAdd className="fill-gray-600" />
+          </button>
+        </div>
       </div>
       <div className="md:w-[75%]">
         <div className="sm:flex w-[100%] justify-between">
           <div className="sm:w-[74%] space-y-2">
-            <h2 className="font-semibold text-xl">{title}</h2>
+            <div className="flex space-x-3 items-center">
+              <h2 className="font-semibold text-xl">{title}</h2>
+              <div
+                className={`${
+                  showreview == true ? "block" : "hidden"
+                } flex space-x-1 items-center`}
+              >
+                {Array.from({ length: goldStars }, (_, index) => (
+                  <FaStar key={index} className="fill-yellow-500" />
+                ))}
+                {Array.from({ length: noStars }, (_, index) => (
+                  <FaStar key={"nostar" + index} className="fill-gray-400" />
+                ))}
+
+                <h2>({reviews})</h2>
+              </div>
+            </div>
             <p className="text-gray-600">{description}</p>
             <div className="flex space-x-3 text-gray-800 flex-wrap">
               <div>
-              <h1 className="font-semibold">Distance to campus:</h1>
+                <h1 className="font-semibold">Distance to campus:</h1>
               </div>
               <div
                 className={`flex space-x-1 items-center ${
@@ -76,7 +114,7 @@ export default function DetailCard({
             </div>
             <div className="flex space-x-3">
               <h1 className="font-semibold">Facilities:</h1>
-              <h1 className="capitalize">{facilities.join(', ')}</h1>
+              <h1 className="capitalize">{facilities.join(", ")}</h1>
             </div>
             <div className="flex space-x-3">
               <div className="bg-blue-900 text-white p-1 w-fit">

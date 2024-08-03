@@ -22,6 +22,7 @@ export default function Featured() {
             showwalk={listing?.walk_dist > 0 ? true : false}
             showtrain={listing?.train_dist > 0 ? true : false}
             showcar={listing?.car_dist > 0 ? true : false}
+            cheapest_in={listing?.cheapest_in}
           />
         ))}
 

@@ -44,7 +44,7 @@ export default function DetailCard({
 
   return (
     <div className="bg-white shadow-2xl rounded-sm w-full p-5 md:flex justify-between">
-      <div className="md:w-[23%] relative">
+      <div className="md:w-[25%] relative">
         <Image
           src={image}
           alt={title}
@@ -62,7 +62,7 @@ export default function DetailCard({
           </button>
         </div>
       </div>
-      <div className="md:w-[75%]">
+      <div className="md:w-[72%]">
         <div className="sm:flex w-[100%] justify-between">
           <div className="sm:w-[74%] space-y-2">
             <div className="flex space-x-3 items-center">
@@ -114,7 +114,7 @@ export default function DetailCard({
             </div>
             <div className="flex space-x-3">
               <h1 className="font-semibold">Facilities:</h1>
-              <h1 className="capitalize">{facilities.join(", ")}</h1>
+              <h1 className="capitalize text-gray-600">{facilities.join(", ")}</h1>
             </div>
             <div className="flex space-x-3">
               <div className="bg-blue-900 text-white p-1 w-fit">

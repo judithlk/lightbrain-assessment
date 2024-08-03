@@ -25,7 +25,7 @@ export default function Featured() {
           />
         ))}
 
-        <div className="min-w-[250px] shadow-lg bg-bg-mid bg-cover relative">
+        <div className="min-w-[240px] md:min-w-[300px] shadow-lg bg-bg-mid bg-cover relative">
           <div className="absolute inset-0 h-[100%]" style={{ backgroundColor: "rgba(50, 50, 50, 0.7)" }}></div>
           <div className="absolute bottom-0 p-4 space-y-4">
             <h2 className="text-white font-semibold text-sm">More collected properties near University College London</h2>

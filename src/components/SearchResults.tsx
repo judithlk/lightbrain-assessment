@@ -53,7 +53,8 @@ export default function SearchResult() {
         search == "" ? "hidden" : "block"
       }`}
     >
-      Search results
+      <h1 className="text-xl font-semibold">Search results</h1>
+      
       {results?.map((listing: any) => (
         <DetailCard
           key={listing?.id}

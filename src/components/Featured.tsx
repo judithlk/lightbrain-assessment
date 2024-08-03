@@ -7,9 +7,9 @@ export default function Featured() {
   const { data: listingData } = useGetListingsQuery();
 
   return (
-    <div className="w-[95%] m-auto overflow-hidden">
-      <h1>Featured Listings</h1>
-      <div className="flex space-x-5 overflow-x-auto no-scrollbar">
+    <div className="w-[95%] m-auto overflow-hidden space-y-3">
+      <h1 className="text-xl font-semibold">Featured Listings</h1>
+      <div className="flex space-x-5 overflow-x-auto no-scrollbar scroll-smooth">
         {listingData?.slice(0, 5).map((listing: any) => (
           <FeatureCard
             key={listing.id}

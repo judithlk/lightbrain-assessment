@@ -2,10 +2,14 @@
 
 import { Suspense } from "react";
 
+import Link from "next/link";
+
 import Header from "@/components/Header";
 import Featured from "@/components/Featured";
 import Detailed from "@/components/Detailed";
 import SearchResult from "@/components/SearchResults";
+
+import { MdArrowUpward } from "react-icons/md";
 
 export default function Home() {
   return (
@@ -27,6 +31,13 @@ export default function Home() {
         </Suspense>
         <Featured />
         <Detailed />
+
+          <Link href="#" className="block fixed bottom-5 right-10">
+          
+        <div className=" rounded-full bg-yellow-500 p-3">
+          <MdArrowUpward className="size-8" />
+        </div>
+          </Link>
       </main>
     </>
   );

@@ -21,9 +21,9 @@ export default function Detailed() {
 
   const { data: listingData } = useGetListingsQuery();
   return (
-    <div className="w-[95%] m-auto">
-      <div className="flex justify-between">
-        <h1>Detailed Listings</h1>
+    <div className="w-[95%] m-auto space-y-3">
+      <div className="space-y-2 md:space-y-0 md:flex justify-between items-center">
+        <h1 className="text-xl font-semibold">Detailed Listings</h1>
         <div className="mb-4">
           <select
             value={sortOrder}

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useState } from "react";
 
 import { FaWalking } from "react-icons/fa";
 import { MdDirectionsBus } from "react-icons/md";
@@ -27,6 +28,7 @@ export default function FeatureCard({
   showtrain: boolean;
   cheapest_in: string
 }) {
+  const [isLoaded, setIsLoaded] = useState(false);
   return (
     <div className="min-w-[240px] md:min-w-[300px] shadow-lg h-fit bg-white">
       <div>
@@ -36,6 +38,9 @@ export default function FeatureCard({
           width={150}
           height={100}
           className="w-[100%]"
+          onLoad={() => setIsLoaded(true)}
+          placeholder="blur"
+          blurDataURL="/housingbg.jpg"
         />
       </div>
       <div className="p-3 space-y-1">
